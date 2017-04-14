@@ -70,7 +70,7 @@ function check_structure($pdir, $rfo, $rfi)
 		return $return;
 }
 
-function install_mysql($pconfig,$cconfig,$conn,$matricola,$phtdocs)
+function install_mysql($pconfig,$cconfig,$conn,$matricola,$phtdocs,$pdump)
 {
 	 // sostituisco il file config.php con il mio file config.php
 	file_put_contents($pconfig,$cconfig);

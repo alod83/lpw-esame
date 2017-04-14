@@ -1,6 +1,7 @@
 <?php
-
+include('config.php');
 include('../php/functions.php');
+
 $pl  		= parse_ini_file("../config.ini", true);			// read parameters from config file
 $pbd     	= $pl['Projects']['base_dir'];						// projects base directory
 $return		= null;
@@ -12,7 +13,14 @@ else
 	// information related to the specific project
 	$pdir 		= $pbd.$project_id."/"; 								// directory where the project will be installed
 	if(system("rm -rf ".escapeshellarg($pdir)) !== false)
-		$return = array('status' => 'ok', 'details' => 'Rimozione progetto avvenuta con successo');
+	{
+		$query = "DROP DATABASE IF EXISTS `$project_id`;";
+		$result = mysqli_query($conn, $query);
+		if(!$result)
+			return array('status' => 'error', 'details' => "Errore nella cancellazione del database $project_id ".mysqli_error($conn));
+		else
+			$return = array('status' => 'ok', 'details' => 'Rimozione progetto avvenuta con successo');
+	}
 	else
 		$return = array('status' => 'error', 'details' => 'Impossibile rimuovere la directory');
 }

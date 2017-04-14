@@ -41,7 +41,7 @@ else
     		if($return['status'] == 'ok')
     		{
     			// install MySQL
-    			$return = install_mysql($pconfig,$cconfig,$conn,$matricola,$phtdocs);
+    			$return = install_mysql($pconfig,$cconfig,$conn,$matricola,$phtdocs,$pdump);
     		}
     		else 
     		{

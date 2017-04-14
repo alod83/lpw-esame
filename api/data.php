@@ -21,9 +21,9 @@ else
 	// inserisco studenti nel database
 	for($i = 0; $i < count($_REQUEST['name']); $i++)
 	{
-		$name = $_REQUEST['name'][$i];
-		$surname = $_REQUEST['surname'][$i];
-		$matricola = $_REQUEST['matricola'][$i];
+		$name = mysqli_real_escape_string($conn,$_REQUEST['name'][$i]);
+		$surname = mysqli_real_escape_string($conn,$_REQUEST['surname'][$i]);
+		$matricola = mysqli_real_escape_string($conn,$_REQUEST['matricola'][$i]);
 		
 		$query = "INSERT INTO studenti (matricola,nome,cognome,id_progetto)
 		VALUES ('$matricola','$name', '$surname', '$id_progetto')";
@@ -32,9 +32,9 @@ else
 			$return = array('status' => 'error', 'details' => "Errore nell'inserimento del candidato $name $surname ".mysqli_error($conn));
 		else
 		{
-			$titolo = $_REQUEST['titolo'];
-			$tag = $_REQUEST['tag'];
-			$source = $_REQUEST['source'];
+			$titolo = mysqli_real_escape_string($conn,$_REQUEST['titolo']);
+			$tag = mysqli_real_escape_string($conn,$_REQUEST['tag']);
+			$source = mysqli_real_escape_string($conn,$_REQUEST['source']);
 			$query = "INSERT INTO progetti (id_progetto,titolo,tag,source)
 			VALUES ('$id_progetto','$titolo', '$tag', '$source')";
 			$result = mysqli_query($conn, $query);
