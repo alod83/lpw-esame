@@ -1,0 +1,131 @@
+input[type="text"]:focus:invalid, 
+input[type="email"]:focus:invalid, 
+input[type="matricola"]:focus:invalid{ 
+	background: #fff url(../images/invalid.png) no-repeat 98% center;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535;
+}
+
+input[type="text"]:focus:valid, 
+input[type="email"]:focus:valid, 
+input[type="matricola"]:focus:valid{ 
+	background: #fff url(../images/valid.png) no-repeat 98% center;
+	box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+
+.register_form ul {
+    width:750px;
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+.register_form li{
+    padding:12px; 
+    border-bottom:1px solid #eee;
+    position:relative;
+}
+
+.register_form li:first-child{
+    border-top:1px solid #777;
+} 
+
+.register_form li:last-child{
+    border-bottom:1px solid #777;
+}
+
+
+.register_form h2 {
+    margin:0;
+    display: inline;
+}
+
+.register_form label {
+    width:150px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
+.register_form input {
+    height:30px; 
+    width:220px; 
+    padding:5px 8px;
+}
+
+.img-btn-add
+.img-btn-rm{
+	height:30px; 
+    width:30px; 
+}
+
+
+button:hover {
+    cursor: pointer; 
+}
+btn-submit:active{
+    border: 1px solid #20911e;
+    box-shadow: 0 0 10px 5px #356b0b inset; 
+    -webkit-box-shadow:0 0 10px 5px #356b0b inset ;
+    -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+    -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+    -o-box-shadow: 0 0 10px 5px #356b0b inset;
+     
+}
+
+btn-submit:hover{
+	opacity:.85;
+}
+
+.btn-add{
+	background-color : #FFFFFF;
+	border : none;
+	position: relative;
+	top: 10px;
+	
+}
+
+.btn-rm{
+	background-color 	: #FFFFFF;
+	border 				: none;
+	position				: relative;
+	top					: 7px;
+	
+}
+
+.btn-start{
+	position				: relative;
+	top					: 10px;
+	left					: 5%;
+	
+}
+
+.candidato{
+	font: bold 14px/30px Georgia, serif;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}
