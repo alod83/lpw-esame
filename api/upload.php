@@ -17,7 +17,8 @@ else
 	
 	$rfo 		= $pl['StudentProject']['required_folders'];		// required folders
 	$rfi 		= $pl['StudentProject']['required_files'];			// required files
-	$phtdocs	= $htdocs."progettini/";
+	$phtdocs 	= $pl['Projects']['phtdocs'];
+	//$phtdocs	= $htdocs."progettini/";
 	// append to $rfi files related to the specific student
 	$rfi []		= 'dump/'.$matricola.'.sql';
 	
